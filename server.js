@@ -4,6 +4,8 @@ const hbs = require('hbs')
 const path = require('path')
 const fs = require('fs')
 
+const port = process.env.PORT || 3000
+
 hbs.registerPartials(path.resolve(__dirname, 'views/partials'))
 hbs.registerHelper('currentYear', () => {
   return new Date().getFullYear()
@@ -52,6 +54,6 @@ app.get('/about', (request, response) => {
 //   })
 // })
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000...')
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}...`)
 })
