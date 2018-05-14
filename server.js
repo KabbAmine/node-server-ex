@@ -42,6 +42,12 @@ app.get('/', (request, response) => {
   })
 })
 
+app.get('/projects', (request, response) => {
+  response.render('projects', {
+    pageTitle: 'Projects page'
+  })
+})
+
 app.get('/about', (request, response) => {
   response.render('about', {
     pageTitle: 'About page'
